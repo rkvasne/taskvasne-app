@@ -80,7 +80,7 @@ body {
     max-width: var(--content-max-width);
     margin: 0 auto;
     padding: 0 var(--page-gutter);
-    height: 70px;
+    height: 56px;
 }
 
 .brand {
@@ -248,8 +248,10 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    padding: calc(var(--section-padding) * 0.9) 0 var(--section-padding-compact);
-    min-height: 82vh;
+    padding: 1.5rem 0 1.25rem;
+    min-height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -289,31 +291,32 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 48px;
+    gap: 36px;
+    width: 100%;
 }
 
 .hero-content {
     flex: 1;
-    max-width: 580px;
+    max-width: 560px;
 }
 
 .hero-content p {
-    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
     color: rgba(255, 255, 255, 0.78);
-    margin-bottom: 2rem;
-    line-height: 1.65;
-    max-width: 540px;
+    margin-bottom: 1.25rem;
+    line-height: 1.55;
+    max-width: 520px;
 }
 
 .hero-announcement-pill {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 5px 14px 5px 6px;
+    padding: 4px 12px 4px 6px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(168, 85, 247, 0.28);
     border-radius: 9999px;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -382,19 +385,19 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px 12px;
-    margin-top: 2rem;
+    gap: 6px 10px;
+    margin-top: 1.25rem;
 }
 
 .trust-badge {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 6px 12px;
+    gap: 6px;
+    padding: 5px 10px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.09);
     border-radius: 8px;
-    font-size: var(--font-size-xs);
+    font-size: 12px;
     color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -433,10 +436,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: clamp(2.35rem, 5.2vw, var(--font-size-5xl));
-    line-height: 1.08;
+    font-size: clamp(2.05rem, 4vw, 3.1rem);
+    line-height: 1.1;
     letter-spacing: -0.035em;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     font-weight: 800;
 }
 
@@ -575,15 +578,15 @@ p {
 
 .desktop-frame {
     position: relative;
-    padding: 16px 16px 0 16px;
+    padding: 10px 10px 0 10px;
     background: radial-gradient(120% 120% at 80% 20%, rgba(59, 130, 246, 0.08) 0%, rgba(147, 51, 234, 0.06) 40%, rgba(12, 12, 16, 0.75) 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-top: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 20px;
+    border-radius: 16px;
     box-shadow: 
         0 0 0 1px rgba(0, 0, 0, 0.6),
-        0 30px 80px -15px rgba(0, 0, 0, 0.8),
-        0 0 60px rgba(147, 51, 234, 0.15);
+        0 24px 60px -15px rgba(0, 0, 0, 0.8),
+        0 0 50px rgba(147, 51, 234, 0.15);
     backdrop-filter: blur(20px);
     transition: all 0.3s ease;
 }
@@ -592,22 +595,22 @@ p {
     border-color: rgba(168, 85, 247, 0.35);
     box-shadow: 
         0 0 0 1px rgba(0, 0, 0, 0.6),
-        0 34px 90px -15px rgba(0, 0, 0, 0.85),
-        0 0 80px rgba(147, 51, 234, 0.22);
+        0 28px 70px -15px rgba(0, 0, 0, 0.85),
+        0 0 60px rgba(147, 51, 234, 0.2);
 }
 
 .desktop-bloom {
     position: absolute;
     inset: 0;
-    border-radius: 20px;
+    border-radius: 16px;
     background: radial-gradient(circle at 70% 30%, rgba(168, 85, 247, 0.12) 0%, transparent 60%);
     pointer-events: none;
 }
 
 .interactive-demo {
     position: relative;
-    width: 440px;
-    height: 590px;
+    width: 410px;
+    height: 505px;
 }
 
 .demo-live-badge {
@@ -643,20 +646,20 @@ p {
 }
 
 .app-popup {
-    width: 430px;
+    width: 400px;
     max-width: 100%;
     background: rgba(24, 24, 30, 0.95);
     backdrop-filter: blur(28px) saturate(150%);
     -webkit-backdrop-filter: blur(28px) saturate(150%);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-top: 1px solid rgba(255, 255, 255, 0.24);
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 
         0 0 0 1px rgba(255, 255, 255, 0.06),
-        0 28px 70px -15px rgba(0, 0, 0, 0.85),
-        0 0 50px rgba(147, 51, 234, 0.18);
+        0 24px 60px -15px rgba(0, 0, 0, 0.85),
+        0 0 40px rgba(147, 51, 234, 0.18);
     position: absolute;
-    bottom: 74px;
+    bottom: 58px;
     right: 0;
     overflow: hidden;
     z-index: 10;
@@ -973,7 +976,7 @@ p {
 
 /* Table Body */
 .demo-table-body {
-    max-height: 236px;
+    max-height: 185px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -1228,21 +1231,21 @@ p {
 /* Tray Area (Windows 11 Acrylic Taskbar Segment) */
 .tray-area {
     position: absolute;
-    bottom: 12px;
+    bottom: 8px;
     right: 0;
     background: rgba(18, 18, 24, 0.82);
     backdrop-filter: blur(24px) saturate(140%);
     -webkit-backdrop-filter: blur(24px) saturate(140%);
-    border-radius: 10px;
-    padding: 5px 12px 5px 8px;
+    border-radius: 9px;
+    padding: 4px 10px 4px 6px;
     display: flex;
     align-items: center;
     gap: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-top: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 
-        0 12px 30px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(147, 51, 234, 0.08),
+        0 10px 24px rgba(0, 0, 0, 0.5),
+        0 0 16px rgba(147, 51, 234, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     user-select: none;
     font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
@@ -2996,10 +2999,62 @@ p {
 
 @media (max-width: 480px) {
     .interactive-demo {
-        height: 540px;
+        height: 500px;
     }
 
     .app-popup {
-        bottom: 68px;
+        bottom: 60px;
+    }
+}
+
+/* Notebooks & Viewports de Altura Reduzida (Primeira Dobra sem Scroll) */
+@media (min-width: 769px) and (max-height: 820px) {
+    .hero {
+        padding: 0.75rem 0 0.75rem;
+        min-height: calc(100vh - 56px);
+    }
+    
+    .hero-container {
+        gap: 24px;
+    }
+
+    h1 {
+        font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+        margin-bottom: 10px;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    .hero-announcement-pill {
+        margin-bottom: 10px;
+        padding: 3px 10px 3px 5px;
+    }
+
+    .hero-trust-badges {
+        margin-top: 1rem;
+        gap: 6px 8px;
+    }
+
+    .trust-badge {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+
+    .interactive-demo {
+        width: 390px;
+        height: 480px;
+    }
+
+    .app-popup {
+        width: 380px;
+        bottom: 54px;
+    }
+
+    .demo-table-body {
+        max-height: 165px;
     }
 }
