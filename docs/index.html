@@ -1322,12 +1322,15 @@
             demoBtnClose.addEventListener('click', () => setPopupOpen(false));
         }
 
-        // Close when clicking outside
-        document.addEventListener('click', (e) => {
-            if (isOpen && trigger && popup && !trigger.contains(e.target) && !popup.contains(e.target)) {
-                setPopupOpen(false);
-            }
-        });
+        // Close when clicking outside within demo area
+        const demoInteractive = document.querySelector('.interactive-demo');
+        if (demoInteractive) {
+            demoInteractive.addEventListener('click', (e) => {
+                if (isOpen && trigger && popup && !trigger.contains(e.target) && !popup.contains(e.target)) {
+                    setPopupOpen(false);
+                }
+            });
+        }
 
         // Mobile menu (drawer)
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
