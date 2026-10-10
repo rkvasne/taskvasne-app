@@ -236,9 +236,36 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="tray-area" id="demo-tray-area">
+                            <div class="tray-chevron-wrapper" title="Ícones ocultos">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="18 15 12 9 6 15"></polyline>
+                                </svg>
+                            </div>
+                            <div class="tray-icon-wrapper active" id="demo-trigger" title="Clique para abrir ou fechar o Taskvasne">
+                                <img src="logo.png" alt="Taskvasne Tray Icon" class="tray-icon">
+                                <span class="tray-active-indicator"></span>
+                            </div>
+                            <div class="system-icons">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                                </svg>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                </svg>
+                            </div>
+                            <div class="clock">
+                                <span id="clock-time">12:45</span>
+                                <span id="clock-date">29/11/2025</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 
@@ -1255,7 +1282,18 @@
             });
         }
 
-        // Demonstração interativa permanece aberta e ativa por padrão
+        // Trigger da bandeja para alternar o flyout
+        const trigger = document.getElementById('demo-trigger');
+        const popup = document.getElementById('demo-popup');
+        let isPopupOpen = true;
+
+        if (trigger && popup) {
+            trigger.addEventListener('click', () => {
+                isPopupOpen = !isPopupOpen;
+                popup.classList.toggle('visible', isPopupOpen);
+                trigger.classList.toggle('active', isPopupOpen);
+            });
+        }
 
         // Mobile menu (drawer)
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');

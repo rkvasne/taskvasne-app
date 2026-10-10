@@ -649,6 +649,12 @@ p {
         0 0 60px rgba(147, 51, 234, 0.24);
 }
 
+.app-popup:not(.visible) {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px) scale(0.98);
+}
+
 .demo-header-icon {
     width: 18px;
     height: 18px;
@@ -1201,9 +1207,9 @@ p {
 
 /* Tray Area (Windows 11 Acrylic Taskbar Segment) */
 .tray-area {
-    position: absolute;
-    bottom: 8px;
-    right: 0;
+    position: relative;
+    margin-top: 10px;
+    align-self: flex-end;
     background: rgba(18, 18, 24, 0.82);
     backdrop-filter: blur(24px) saturate(140%);
     -webkit-backdrop-filter: blur(24px) saturate(140%);
