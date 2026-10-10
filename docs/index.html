@@ -55,29 +55,61 @@
 
     <main>
         <section class="hero" id="download">
+            <div class="hero-grid-pattern"></div>
+            <div class="hero-ambient-glow"></div>
             <div class="container hero-container">
                 <div class="hero-content">
-                    <div class="hero-header">
-                        <img src="icon.svg" alt="Taskvasne Logo" class="hero-logo">
-                        <div class="badge">v0.2.3</div>
+                    <div class="hero-announcement-pill">
+                        <div class="hero-pill-badge">
+                            <img src="icon.svg" alt="Taskvasne" class="hero-pill-icon">
+                            <span>v0.2.3</span>
+                        </div>
+                        <span class="hero-pill-text" data-i18n="hero.pill">Nativo para Windows 11 &amp; 10</span>
+                        <span class="hero-pill-pulse"></span>
                     </div>
                     <h1 data-i18n="hero.title">Porta ocupada?<br><span>Liberada em 1 clique.</span></h1>
                     <p data-i18n="hero.subtitle">Gerenciador de portas e processos nativo para Windows. Encontre e encerre processos travados sem sair do seu fluxo de código.</p>
                     <div class="cta-group">
-                        <a href="#download-final" class="btn primary"
-                            data-i18n="hero.download">Baixar para Windows</a>
-                        <a href="https://github.com/rkvasne/taskvasne" class="btn secondary" target="_blank" rel="noopener noreferrer"
-                            data-i18n="hero.github">Ver no GitHub</a>
+                        <a href="#download-final" class="btn primary hero-btn-download">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span data-i18n="hero.download">Baixar para Windows</span>
+                        </a>
+                        <a href="https://github.com/rkvasne/taskvasne" class="btn secondary hero-btn-github" target="_blank" rel="noopener noreferrer">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            <span data-i18n="hero.github">Ver no GitHub</span>
+                        </a>
                     </div>
                     <div class="hero-trust-badges">
-                        <span class="trust-badge"><span class="trust-dot"></span><span data-i18n="hero.trust.os">Windows 11 / 10 x64</span></span>
-                        <span class="trust-badge"><span class="trust-dot"></span><span data-i18n="hero.trust.size">Instalador de ~2 MB</span></span>
-                        <span class="trust-badge"><span class="trust-dot"></span><span data-i18n="hero.trust.stack">Rust &amp; Tauri v2</span></span>
-                        <span class="trust-badge"><span class="trust-dot"></span><span data-i18n="hero.trust.offline">100% Offline e C&oacute;digo Aberto</span></span>
+                        <span class="trust-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.551H10.949M0 12.6h9.75V22.05L0 20.7m10.949-8.1H24V24l-13.051-1.801"/></svg>
+                            <span data-i18n="hero.trust.os">Windows 11 / 10 x64</span>
+                        </span>
+                        <span class="trust-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            <span data-i18n="hero.trust.size">Instalador de ~2 MB</span>
+                        </span>
+                        <span class="trust-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24m-14.14 0 4.24-4.24m5.66-5.66 4.24-4.24"/></svg>
+                            <span data-i18n="hero.trust.stack">Rust &amp; Tauri v2</span>
+                        </span>
+                        <span class="trust-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <span data-i18n="hero.trust.offline">100% Offline e C&oacute;digo Aberto</span>
+                        </span>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="interactive-demo mock-interactive">
+                        <div class="demo-live-badge">
+                            <span class="demo-live-dot"></span>
+                            <span class="demo-live-text" data-i18n="demo.liveHint">Demonstração Interativa ao Vivo</span>
+                        </div>
                         <div class="app-popup mock-popup visible" id="demo-popup">
                             <!-- Header -->
                             <div class="demo-header">
@@ -207,24 +239,28 @@
                             </div>
                         </div>
 
-                        <div class="tray-area">
-                            <div class="tray-icon-wrapper" id="demo-trigger">
-                                <img src="logo.png" alt="Tray Icon" class="tray-icon">
+                        <div class="tray-area" id="demo-tray-area">
+                            <div class="tray-chevron-wrapper" title="Ícones ocultos">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <polyline points="18 15 12 9 6 15"></polyline>
+                                </svg>
+                            </div>
+                            <div class="tray-icon-wrapper active" id="demo-trigger" title="Clique para abrir ou fechar o Taskvasne">
+                                <img src="logo.png" alt="Taskvasne Tray Icon" class="tray-icon">
+                                <span class="tray-active-indicator"></span>
                                 <div class="click-hint">
-                                    <span data-i18n="demo.hint">Teste aqui</span>
+                                    <span data-i18n="demo.hint">Clique para testar</span>
                                     <div class="arrow-down"></div>
                                 </div>
                             </div>
                             <div class="system-icons">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
                                     <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
                                     <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
                                     <line x1="12" y1="20" x2="12.01" y2="20"></line>
                                 </svg>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                                     <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
                                 </svg>
@@ -729,6 +765,7 @@
                 'nav.specs': 'Engenharia',
                 'nav.faq': 'FAQ',
                 'nav.author': 'Autor',
+                'hero.pill': 'Nativo para Windows 11 &amp; 10',
                 'hero.title': 'Porta ocupada?<br><span>Liberada em 1 clique.</span>',
                 'hero.subtitle': 'Gerenciador de portas e processos nativo para Windows. Encontre e encerre processos travados sem sair do seu fluxo de código.',
                 'hero.download': 'Baixar para Windows',
@@ -738,7 +775,8 @@
                 'hero.trust.stack': 'Rust & Tauri v2',
                 'hero.trust.offline': '100% Offline e Código Aberto',
                 'demo.kill': 'Parar',
-                'demo.hint': 'Teste aqui',
+                'demo.hint': 'Clique para alternar',
+                'demo.liveHint': 'Demonstração Interativa ao Vivo',
                 'demo.banner': 'Taskvasne ativo na bandeja do sistema',
                 'demo.tabPorts': 'Portas',
                 'demo.tabUnlocker': 'Desbloquear Pasta',
@@ -849,6 +887,7 @@
                 'nav.specs': 'Engineering',
                 'nav.faq': 'FAQ',
                 'nav.author': 'Author',
+                'hero.pill': 'Native for Windows 11 &amp; 10',
                 'hero.title': 'Port occupied?<br><span>Freed in 1 click.</span>',
                 'hero.subtitle': 'Native port and process manager for Windows. Find and terminate locked processes without breaking your dev flow.',
                 'hero.download': 'Download for Windows',
@@ -858,7 +897,8 @@
                 'hero.trust.stack': 'Rust & Tauri v2',
                 'hero.trust.offline': '100% Offline & Open Source',
                 'demo.kill': 'Kill',
-                'demo.hint': 'Try here',
+                'demo.hint': 'Click to toggle',
+                'demo.liveHint': 'Live Interactive Demo',
                 'demo.banner': 'Taskvasne active in system tray',
                 'demo.tabPorts': 'Ports',
                 'demo.tabUnlocker': 'Unlock Folder',
@@ -1240,6 +1280,9 @@
             isOpen = open;
             if (popup) {
                 popup.classList.toggle('visible', open);
+            }
+            if (trigger) {
+                trigger.classList.toggle('active', open);
             }
             if (hint) {
                 hint.style.opacity = open ? '0' : '1';
