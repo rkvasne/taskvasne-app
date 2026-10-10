@@ -33,6 +33,10 @@
             </nav>
 
             <div class="header-actions">
+                <a href="#download-final" class="nav-download-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span data-i18n="nav.downloadBtn">Baixar</span>
+                </a>
                 <button id="lang-toggle" class="lang-btn" type="button">EN</button>
                 <button id="mobile-menu-btn" class="mobile-menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="mobile-menu-bar"></span>
@@ -105,11 +109,13 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="interactive-demo mock-interactive">
-                        <div class="demo-live-badge">
-                            <span class="demo-live-dot"></span>
-                            <span class="demo-live-text" data-i18n="demo.liveHint">Demonstração Interativa ao Vivo</span>
-                        </div>
+                    <div class="desktop-frame">
+                        <div class="desktop-bloom"></div>
+                        <div class="interactive-demo mock-interactive">
+                            <div class="demo-live-badge">
+                                <span class="demo-live-dot"></span>
+                                <span class="demo-live-text" data-i18n="demo.liveHint">Demonstração Interativa ao Vivo</span>
+                            </div>
                         <div class="app-popup mock-popup visible" id="demo-popup">
                             <!-- Header -->
                             <div class="demo-header">
@@ -272,6 +278,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -478,6 +485,18 @@
                         <div class="spec-metric-num">~20 MB</div>
                         <div class="spec-metric-label" data-i18n="specs.m1.label">Mem&oacute;ria RAM</div>
                         <div class="spec-metric-sub" data-i18n="specs.m1.sub">vs 300MB&ndash;600MB em Electron</div>
+                        <div class="spec-metric-bar-wrapper">
+                            <div class="spec-bar-row">
+                                <span class="spec-bar-name">Taskvasne</span>
+                                <div class="spec-bar-track"><div class="spec-bar-fill rust" style="width: 5%"></div></div>
+                                <span class="spec-bar-val">20 MB</span>
+                            </div>
+                            <div class="spec-bar-row">
+                                <span class="spec-bar-name">Electron</span>
+                                <div class="spec-bar-track"><div class="spec-bar-fill electron" style="width: 95%"></div></div>
+                                <span class="spec-bar-val">450 MB</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="spec-metric-card">
                         <div class="spec-metric-num">&lt; 300 ms</div>
@@ -671,9 +690,13 @@
                                 <div class="donate-qr-img-wrapper">
                                     <img src="landing/images/qr_pix.png" alt="QR code Pix" class="donate-qr-img" loading="lazy" decoding="async">
                                 </div>
-                                <div class="donate-pix-key">
+                                <div class="donate-pix-key-wrapper">
                                     <span class="donate-pix-label">Chave Aleat&oacute;ria:</span>
-                                    fa550c5d-fdaf-4484-b52b-760071fe524d
+                                    <button class="donate-copy-pix-btn" id="copy-pix-btn" data-key="fa550c5d-fdaf-4484-b52b-760071fe524d" title="Clique para copiar a chave Pix" type="button">
+                                        <code>fa550c5d-fdaf-4484-b52b-760071fe524d</code>
+                                        <svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                        <span class="copy-feedback" id="pix-copy-feedback">Copiado!</span>
+                                    </button>
                                 </div>
                             </div>
                             <div class="donate-qr-item">
@@ -760,6 +783,7 @@
         const translations = {
             'pt-BR': {
                 'nav.download': 'Download',
+                'nav.downloadBtn': 'Baixar',
                 'nav.comparison': 'Comparativo',
                 'nav.features': 'Funcionalidades',
                 'nav.specs': 'Engenharia',
@@ -882,6 +906,7 @@
             },
             'en': {
                 'nav.download': 'Download',
+                'nav.downloadBtn': 'Download',
                 'nav.comparison': 'Comparison',
                 'nav.features': 'Features',
                 'nav.specs': 'Engineering',
@@ -1362,6 +1387,23 @@
                 const textKey = isExpanded ? 'donate.qr' : 'donate.toggleQr';
                 if (translations[currentLang] && translations[currentLang][textKey]) {
                     qrToggleBtn.querySelector('span').innerHTML = translations[currentLang][textKey];
+                }
+            });
+        }
+
+        // Cópia da chave Pix com feedback
+        const copyPixBtn = document.getElementById('copy-pix-btn');
+        const pixFeedback = document.getElementById('pix-copy-feedback');
+        if (copyPixBtn) {
+            copyPixBtn.addEventListener('click', () => {
+                const key = copyPixBtn.getAttribute('data-key');
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(key).then(() => {
+                        if (pixFeedback) {
+                            pixFeedback.classList.add('visible');
+                            setTimeout(() => pixFeedback.classList.remove('visible'), 2000);
+                        }
+                    });
                 }
             });
         }
