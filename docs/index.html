@@ -109,17 +109,16 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="desktop-frame">
-                        <div class="desktop-bloom"></div>
-                        <div class="interactive-demo mock-interactive">
-                            <div class="demo-live-badge">
-                                <span class="demo-live-dot"></span>
-                                <span class="demo-live-text" data-i18n="demo.liveHint">Demonstração Interativa ao Vivo</span>
-                            </div>
+                    <div class="hero-demo-stage">
+                        <div class="demo-live-badge">
+                            <span class="demo-live-dot"></span>
+                            <span class="demo-live-text" data-i18n="demo.liveHint">Demonstração Interativa ao Vivo</span>
+                        </div>
                         <div class="app-popup mock-popup visible" id="demo-popup">
                             <!-- Header -->
                             <div class="demo-header">
                                 <div class="demo-title">
+                                    <img src="icon.svg" alt="Taskvasne" class="demo-header-icon">
                                     <span>Taskvasne</span>
                                     <span class="demo-count-badge" id="demo-total-count">78</span>
                                 </div>
@@ -143,13 +142,6 @@
                                             <circle cx="12" cy="12" r="10"></circle>
                                             <line x1="12" y1="16" x2="12" y2="12"></line>
                                             <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                                        </svg>
-                                    </button>
-                                    <button class="demo-icon-btn danger" id="demo-btn-close" title="Fechar flyout" aria-label="Fechar flyout">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                            <polyline points="16 17 21 12 16 7"></polyline>
-                                            <line x1="21" y1="12" x2="9" y2="12"></line>
                                         </svg>
                                     </button>
                                 </div>
@@ -242,38 +234,6 @@
                                     <span class="demo-status-pill tcp" id="demo-tcp-pill">TCP: 58</span>
                                     <span class="demo-status-pill udp" id="demo-udp-pill">UDP: 20</span>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="tray-area" id="demo-tray-area">
-                            <div class="tray-chevron-wrapper" title="Ícones ocultos">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                    <polyline points="18 15 12 9 6 15"></polyline>
-                                </svg>
-                            </div>
-                            <div class="tray-icon-wrapper active" id="demo-trigger" title="Clique para abrir ou fechar o Taskvasne">
-                                <img src="logo.png" alt="Taskvasne Tray Icon" class="tray-icon">
-                                <span class="tray-active-indicator"></span>
-                                <div class="click-hint">
-                                    <span data-i18n="demo.hint">Clique para testar</span>
-                                    <div class="arrow-down"></div>
-                                </div>
-                            </div>
-                            <div class="system-icons">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                                </svg>
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                                </svg>
-                            </div>
-                            <div class="clock">
-                                <span id="clock-time">12:45</span>
-                                <span id="clock-date">29/11/2025</span>
                             </div>
                         </div>
                     </div>
@@ -1295,42 +1255,7 @@
             });
         }
 
-        // Trigger da bandeja e popup
-        const trigger = document.getElementById('demo-trigger');
-        const popup = document.getElementById('demo-popup');
-        const hint = document.querySelector('.click-hint');
-        let isOpen = true;
-
-        function setPopupOpen(open) {
-            isOpen = open;
-            if (popup) {
-                popup.classList.toggle('visible', open);
-            }
-            if (trigger) {
-                trigger.classList.toggle('active', open);
-            }
-            if (hint) {
-                hint.style.opacity = open ? '0' : '1';
-            }
-        }
-
-        if (trigger) {
-            trigger.addEventListener('click', () => setPopupOpen(!isOpen));
-        }
-
-        if (demoBtnClose) {
-            demoBtnClose.addEventListener('click', () => setPopupOpen(false));
-        }
-
-        // Close when clicking outside within demo area
-        const demoInteractive = document.querySelector('.interactive-demo');
-        if (demoInteractive) {
-            demoInteractive.addEventListener('click', (e) => {
-                if (isOpen && trigger && popup && !trigger.contains(e.target) && !popup.contains(e.target)) {
-                    setPopupOpen(false);
-                }
-            });
-        }
+        // Demonstração interativa permanece aberta e ativa por padrão
 
         // Mobile menu (drawer)
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');

@@ -570,63 +570,33 @@ p {
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Desktop Frame Container (Windows 11 Stage) */
+/* Hero App Stage (Janela Flutuante do Taskvasne - Sem Moldura Externa) */
 .hero-image {
     position: relative;
     z-index: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.desktop-frame {
+.hero-demo-stage {
     position: relative;
-    padding: 10px 10px 0 10px;
-    background: radial-gradient(120% 120% at 80% 20%, rgba(59, 130, 246, 0.08) 0%, rgba(147, 51, 234, 0.06) 40%, rgba(12, 12, 16, 0.75) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 16px;
-    box-shadow: 
-        0 0 0 1px rgba(0, 0, 0, 0.6),
-        0 24px 60px -15px rgba(0, 0, 0, 0.8),
-        0 0 50px rgba(147, 51, 234, 0.15);
-    backdrop-filter: blur(20px);
-    transition: all 0.3s ease;
-}
-
-.desktop-frame:hover {
-    border-color: rgba(168, 85, 247, 0.35);
-    box-shadow: 
-        0 0 0 1px rgba(0, 0, 0, 0.6),
-        0 28px 70px -15px rgba(0, 0, 0, 0.85),
-        0 0 60px rgba(147, 51, 234, 0.2);
-}
-
-.desktop-bloom {
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    background: radial-gradient(circle at 70% 30%, rgba(168, 85, 247, 0.12) 0%, transparent 60%);
-    pointer-events: none;
-}
-
-.interactive-demo {
-    position: relative;
-    width: 410px;
-    height: 505px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .demo-live-badge {
-    position: absolute;
-    top: -14px;
-    right: 0;
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: 4px 10px;
-    background: rgba(20, 20, 26, 0.9);
+    padding: 4px 12px;
+    background: rgba(20, 20, 26, 0.85);
     border: 1px solid rgba(34, 197, 94, 0.35);
-    border-radius: 20px;
+    border-radius: 9999px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(10px);
-    z-index: 15;
+    margin-bottom: 12px;
+    z-index: 2;
 }
 
 .demo-live-dot {
@@ -646,42 +616,43 @@ p {
 }
 
 .app-popup {
-    width: 400px;
+    position: relative;
+    width: 410px;
     max-width: 100%;
-    background: rgba(24, 24, 30, 0.95);
+    background: rgba(20, 20, 26, 0.96);
     backdrop-filter: blur(28px) saturate(150%);
     -webkit-backdrop-filter: blur(28px) saturate(150%);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-top: 1px solid rgba(255, 255, 255, 0.24);
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.06),
-        0 24px 60px -15px rgba(0, 0, 0, 0.85),
-        0 0 40px rgba(147, 51, 234, 0.18);
-    position: absolute;
-    bottom: 58px;
-    right: 0;
+        0 0 0 1px rgba(0, 0, 0, 0.6),
+        0 28px 70px -15px rgba(0, 0, 0, 0.88),
+        0 0 50px rgba(147, 51, 234, 0.18);
     overflow: hidden;
-    z-index: 10;
-    animation: float 6s ease-in-out infinite;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI Variable', 'Segoe UI', system-ui, sans-serif;
     font-variant-numeric: tabular-nums;
     user-select: none;
-}
-
-.app-popup.visible {
     opacity: 1;
     pointer-events: auto;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+.app-popup:hover {
+    border-color: rgba(168, 85, 247, 0.35);
+    border-top-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 
+        0 0 0 1px rgba(0, 0, 0, 0.6),
+        0 32px 80px -15px rgba(0, 0, 0, 0.92),
+        0 0 60px rgba(147, 51, 234, 0.24);
+}
+
+.demo-header-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
 }
 
 /* Header */
@@ -2964,16 +2935,14 @@ p {
         justify-content: center;
     }
 
-    .desktop-frame {
-        padding: 12px 12px 0 12px;
+    .hero-demo-stage {
+        align-items: center;
         width: 100%;
-        max-width: 460px;
     }
 
-    .interactive-demo {
+    .app-popup {
         width: 100%;
-        max-width: 430px;
-        height: 570px;
+        max-width: 410px;
     }
 
     .nav-download-btn {
@@ -2998,12 +2967,8 @@ p {
 }
 
 @media (max-width: 480px) {
-    .interactive-demo {
-        height: 500px;
-    }
-
     .app-popup {
-        bottom: 60px;
+        width: 100%;
     }
 }
 
@@ -3049,14 +3014,8 @@ p {
         font-size: 11.5px;
     }
 
-    .interactive-demo {
-        width: 395px;
-        height: 485px;
-    }
-
     .app-popup {
-        width: 385px;
-        bottom: 54px;
+        width: 395px;
     }
 
     .demo-table-body {
