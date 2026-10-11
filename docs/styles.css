@@ -62,10 +62,10 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--bg);
     color: var(--text);
-        cursor: default;
+    cursor: default;
     caret-color: transparent;
     line-height: 1.6;
 }
@@ -321,21 +321,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 36px;
+    gap: clamp(32px, 4vw, 56px);
     width: 100%;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 560px;
+    flex: 1 1 680px;
+    max-width: 700px;
 }
 
 .hero-content p {
-    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
-    color: rgba(255, 255, 255, 0.78);
-    margin-bottom: 1.25rem;
-    line-height: 1.55;
-    max-width: 520px;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.35rem;
+    line-height: 1.6;
+    max-width: 640px;
 }
 
 .hero-announcement-pill {
@@ -459,18 +459,18 @@ body {
    Design System Tipográfico & Hierarquia Visual (Prompt 40 UX Audit)
    ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
     color: #ffffff;
     font-weight: 700;
     margin: 0;
 }
 
 h1 {
-    font-size: clamp(2.65rem, 5.2vw, 3.65rem);
+    font-size: clamp(2.75rem, 5.2vw, 3.85rem);
     line-height: 1.08;
     letter-spacing: -0.035em;
-    margin-bottom: 16px;
-    font-weight: 800;
+    margin-bottom: 18px;
+    font-weight: 700;
 }
 
 h1 span {
@@ -1621,7 +1621,7 @@ p {
     line-height: 1.15;
     letter-spacing: -0.025em;
     color: #ffffff;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
 }
 
 .dev-role {
