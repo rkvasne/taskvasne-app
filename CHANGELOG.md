@@ -13,6 +13,28 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.4] - 2026-10-10
+
+### Changed
+
+- **Refinamento Tipográfico de Alta Personalidade (Plus Jakarta Sans 800):**
+    - Adoção da família tipográfica `Plus Jakarta Sans` nos títulos em peso `800 ExtraBold` com tracking de alta precisão (`-0.04em`), conferindo impacto muscular, autoridade e ink-traps expressivos ao hero e cabeçalhos.
+    - Eliminação completa de faux-bolding tipográfico e de fontes com massa óptica esguia em dark mode.
+- **Equilíbrio Espacial e Expansão do Hero (`docs/`):**
+    - Ampliação do bloco de texto do hero (`.hero-content`) para `max-width: 700px` e do subtítulo para `max-width: 640px`, com gap responsivo de container (`clamp(32px, 4vw, 56px)`), preenchendo o vazio central e harmonizando com a demonstração interativa da aplicação.
+- **Auditoria de Qualidade Impeccable & UX (Prompt 40):**
+    - Navegação com rolagem suave (`scroll-behavior: smooth`) e `scroll-padding-top: 72px` evitando sobreposição da navbar fixa sobre títulos de seção.
+    - Acessibilidade WCAG 2.1 AA aprimorada com Skip Link para teclado, `:focus-visible` de alto contraste, contraste mínimo de 5.3:1 em botões de ação e tags `alt` descritivas.
+    - Triggers do flyout da bandeja convertidos em botões semânticos (`<button type="button">`) com `aria-expanded` dinamicamente sincronizado.
+- **Alinhamento Documental e Código (Prompts 25 + 91):**
+    - Correção da versão desatualizada (`v0.1.4`) no modal Sobre do aplicativo desktop (`ui/index.html`) para a versão ativa `v0.2.4`.
+    - Bump consistente de versão patch para `0.2.4` em `package.json`, `src-tauri/Cargo.toml`, `src-tauri/tauri.conf.json`, `docs/index.html`, `README.md` e `docs/README.md`.
+
+### Aprendizado da Release
+
+- **Fato observado:** Fontes geométricas com traços monolineares (como Space Grotesk ou Outfit) perdem peso visual contra fundos pretos absolutos (`#0a0a0a`), onde a iluminação do texto tende a reduzir a massa percebida do traço. Adoção de pesos 800 ExtraBold com _ink-traps_ e tracking negativo (`-0.04em`) devolve a imponência estética sem sacrificar clareza técnica.
+- **Diretriz consolidada:** Alinhar o design system tipográfico entre títulos e corpo (usando a mesma família ou famílias com proporções ópticas harmonizadas) preserva a identidade visual da aplicação e evita saltos dissonantes entre a primeira dobra e os componentes interativos.
+
 ## [0.2.3] - 2026-10-10
 
 ### Added

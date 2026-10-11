@@ -16,6 +16,14 @@
 
 ## 📝 Histórico de Sessões
 
+### 2026-10-10 — Release v0.2.4: Tipografia Encorpada Plus Jakarta Sans 800, Expansão do Hero e Higiene Janitor
+
+- **Versão v0.2.4:** Bump patch com suíte de testes 100% verde (Jest 17/17, Cargo test 11/11, Clippy 0 warnings, ESLint 0 erros, Impeccable detect 0 anti-patterns, verify:full 100% conforme).
+- **Refinamento Tipográfico de Alta Personalidade:** Adoção de `Plus Jakarta Sans` nos títulos com peso `800 ExtraBold` e tracking `-0.04em`, eliminando a fragilidade visual de fontes esguias em dark mode e unificando o design system com o corpo de texto.
+- **Equilíbrio Espacial do Hero:** Expansão da largura do bloco textual do hero para `max-width: 700px` com gap adaptativo `clamp(32px, 4vw, 56px)`, preenchendo o vazio central e harmonizando a composição visual.
+- **Auditoria de Qualidade Impeccable & UX (Prompt 40):** Navegação com rolagem suave e `scroll-padding-top: 72px`, anel `:focus-visible` de alto contraste, Skip Link para teclado, contraste WCAG AA >= 5.3:1 e triggers semânticos com atributos ARIA.
+- **Auditoria de Alinhamento e Dívida Técnica (Prompts 20, 25, 43, 91):** Sincronização da versão no modal Sobre do app (`ui/index.html`), alinhamento de manifests (`package.json`, `Cargo.toml`, `tauri.conf.json`) e documentação (`README.md`, `docs/README.md`, `CHANGELOG.md`).
+
 ### 2026-10-10 — Release v0.2.3: Reformulação Profissional da Landing Page, Comparativo, Specs e FAQ
 
 - **Versão v0.2.3:** Bump patch com suíte de testes 100% verde (Jest 17/17, Impeccable detect 0 anti-patterns, verify:full 100% conforme).
