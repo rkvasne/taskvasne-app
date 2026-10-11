@@ -459,7 +459,7 @@ body {
    Design System Tipográfico & Hierarquia Visual (Prompt 40 UX Audit)
    ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     color: #ffffff;
     font-weight: 700;
     margin: 0;
@@ -468,9 +468,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: clamp(2.75rem, 5.2vw, 3.85rem);
     line-height: 1.08;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.04em;
     margin-bottom: 18px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 h1 span {
@@ -1616,12 +1616,12 @@ p {
 
 .dev-name {
     font-size: clamp(2rem, 3.5vw, 2.5rem);
-    font-weight: 700;
+    font-weight: 800;
     margin: 0 0 0.5rem 0;
     line-height: 1.15;
     letter-spacing: -0.025em;
     color: #ffffff;
-    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .dev-role {
